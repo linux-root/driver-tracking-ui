@@ -7,7 +7,9 @@ import {
     LOGOUT,
     LOGOUT_SUCCESS,
     FETCH_USER_DATA,
-    FETCH_USER_DATA_SUCCESS
+    FETCH_USER_DATA_SUCCESS,
+    REGISTER,
+    REGISTER_SUCCESS
 } from './mutation-types'
 
 import * as config from '../config'
@@ -39,5 +41,9 @@ export const driverAction = {
         }).then(response => {
             commit(FETCH_USER_DATA_SUCCESS, response.data);
         })
+    },
+    register({commit}){
+        commit(REGISTER);
+        axios.post(`${API_BASE}`/drivers)
     }
 };
